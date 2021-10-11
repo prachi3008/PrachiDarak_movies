@@ -1,19 +1,27 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
-    compileSdk 31
+    def globalConfiguration = rootProject.extensions.getByName("ext")
 
+    compileSdkVersion globalConfiguration["compileSdkVersion"]
     defaultConfig {
         applicationId "com.example.moviesapp"
-        minSdk 21
-        targetSdk 31
+        minSdkVersion globalConfiguration["minSdkVersion"]
+        targetSdkVersion globalConfiguration["targetSdkVersion"]
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Enabling multidex support
+        multiDexEnabled true
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     buildTypes {
@@ -22,21 +30,48 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
 dependencies {
+    def appDependencies = rootProject.ext.appDependencies
 
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation project(':data')
+    implementation project(':domain')
+    implementation project(':model')
+
+    implementation appDependencies.kotlin
+    implementation appDependencies.kotlinKtx
+    implementation appDependencies.multidex
+
+    implementation appDependencies.javaxAnnotation
+    implementation appDependencies.javaxInject
+    implementation appDependencies.rxKotlin
+    implementation appDependencies.rxAndroid
+
+    implementation appDependencies.coroutines
+    implementation appDependencies.coroutinesAndroid
+
+    implementation appDependencies.navigationFragment
+    implementation appDependencies.navigationUi
+
+    implementation appDependencies.appCompat
+    implementation appDependencies.material
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.glide
+    implementation appDependencies.palette
+    implementation appDependencies.threeTen
+    implementation appDependencies.swipeRefreshLayout
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

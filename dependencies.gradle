@@ -1,0 +1,78 @@
+allprojects {
+    repositories {
+    }
+}
+
+ext {
+    // Android
+    minSdkVersion = 21
+    compileSdkVersion = 30
+    targetSdkVersion = 30
+
+    // Libraries
+    appCompatVersion = '1.2.0'
+    materialVersion = '1.2.0'
+    constraintLayoutVersion = '2.0.0'
+    kotlinKtxVersion = '1.2.0'
+    kotlinLifecycleVersion = '2.2.0'
+    androidxLifecycleVersion = '2.2.0'
+    rxKotlinVersion = '2.4.0'
+    rxAndroidVersion = '2.1.1'
+    coroutinesVersion = '1.5.1'
+    multidexVersion = '1.0.3'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    retrofitVersion = '2.9.0'
+    okHttpLoggingVersion = '4.9.0'
+    glideVersion = '4.11.0'
+    paletteVersion = '1.0.0'
+    threeTenVersion = '1.2.4'
+    swipeRefreshLayoutVersion = '1.1.0'
+
+    appDependencies = [
+            kotlin:                "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            kotlinKtx:             "androidx.core:core-ktx:$kotlinKtxVersion",
+            multidex:              "com.android.support:multidex:$multidexVersion",
+            appCompat:             "androidx.appcompat:appcompat:$appCompatVersion",
+            material:              "com.google.android.material:material:$materialVersion",
+            constraintLayout:      "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            navigationFragment:    "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            navigationUi:          "androidx.navigation:navigation-ui-ktx:$nav_version",
+            javaxAnnotation:       "javax.annotation:jsr250-api:$javaxAnnotationVersion",
+            javaxInject:           "javax.inject:javax.inject:$javaxInjectVersion",
+            rxKotlin:              "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            rxAndroid:             "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            coroutines:            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
+            coroutinesAndroid:     "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion",
+            glide:                 "com.github.bumptech.glide:glide:$glideVersion",
+            palette:               "androidx.palette:palette:$paletteVersion",
+            threeTen:              "com.jakewharton.threetenabp:threetenabp:$threeTenVersion",
+            swipeRefreshLayout:    "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
+    ]
+
+    domainDependencies = [
+            kotlin:                "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            javaxAnnotation:       "javax.annotation:jsr250-api:$javaxAnnotationVersion",
+            javaxInject:           "javax.inject:javax.inject:$javaxInjectVersion",
+            rxKotlin:              "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+    ]
+
+    dataDependencies = [
+            kotlin:                "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            javaxAnnotation:       "javax.annotation:jsr250-api:$javaxAnnotationVersion",
+            javaxInject:           "javax.inject:javax.inject:$javaxInjectVersion",
+            rxKotlin:              "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            retrofit:              "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGson:          "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitRx:            "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            okHttpLogging:         "com.squareup.okhttp3:logging-interceptor:$okHttpLoggingVersion",
+            roomRuntime:           "androidx.room:room-runtime:$room_version",
+            roomCompiler:          "androidx.room:room-compiler:$room_version",
+            roomRxJava:            "androidx.room:room-rxjava2:$room_version"
+    ]
+
+    modelDependencies = [
+            kotlin:                "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    ]
+
+}

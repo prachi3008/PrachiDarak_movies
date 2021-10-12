@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.moviesapp.common.utils.WindowUtils.clearStatusBar
 import com.example.moviesapp.common.utils.WindowUtils.setToolbarTopPadding
 import com.example.moviesapp.common.utils.WindowUtils.setTransparentStatusBar
 import com.example.moviesapp.common.utils.WindowUtils.setupDarkTheme
@@ -28,7 +29,7 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    fun clearStatusBar(baseActivity: BaseActivity) {
+    fun clearStatusBar() {
         clearStatusBar(this)
     }
 

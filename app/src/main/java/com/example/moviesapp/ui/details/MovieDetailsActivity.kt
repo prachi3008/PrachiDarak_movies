@@ -44,7 +44,7 @@ class MovieDetailsActivity : BaseActivity() {
         setContentView(binding.root)
 
         setupToolbar()
-        clearStatusBar(this)
+        clearStatusBar()
 
         setupPosterImage()
 

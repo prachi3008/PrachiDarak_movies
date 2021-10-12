@@ -40,7 +40,7 @@ class PopularFragment : Fragment(R.layout.fragment_movie_list), MovieListAdapter
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentMovieListBinding.inflate(inflater, container, false)
         return binding.root
     }
